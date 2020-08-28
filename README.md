@@ -190,3 +190,6 @@ obj.plot_efficient_frontier()
 <center>
 <img src="https://github.com/JPL13/optimal-portfolio-python-package/blob/master/Efficient%20Frontier.jpg" style="width:60%;"/>
 </center>
+
+We can see from the plot that, the diversified portfolios on the efficient frontier do perform better than any of the individual stock: 
+for any given return, the portfolio on the efficient frontier has the lowest risk; or equivalently for any given risk, the portfolio on the efficient frontier has the highest return.
