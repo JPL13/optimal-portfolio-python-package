@@ -10,7 +10,7 @@ import setuptools
 
 setuptools.setup(
     name="ptf_optimize", # Replace with your own username
-    version="0.0.3",
+    version="0.0.4",
     author="Juan Piao",
     author_email="juanpiao13@gmail.com",
     description="get optimal portfolio",
