@@ -1,4 +1,4 @@
-# optimal-portfolio-python-package
+# ptf_optimize
 
 ## Overview
 
