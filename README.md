@@ -6,7 +6,7 @@ This package implements portfolio optimization methods based on Modern Portfolio
 
 The key insight of this paper is that by combining assets with different expected returns and volatilities, one can find a optimal weights which minimises the risk for a targeted return or maximizes the return for a targeted risk. The set of all such optimal portfolios is referred to as the efficient frontier in the absence of a risk-free asset. The shape of this efficient frontier is a parabola. 
 
-When a risk-free asset is present, the line passes vertical intercept at the risk-free rate and tangent to the efficient frontier at the pure risky portfolio is the new efficient frontier, which is called the capital allocation line (CAL). The tangency point with the parabola represents the optimal portfolio with 100% risky assets. We will mark this optimal portfolio as a "Star" in the plot at the bottom of this file.  
+When a risk-free asset is present, the line passes vertical intercept at the risk-free rate and tangent to the efficient frontier is the new efficient frontier, which is called the capital allocation line (CAL). The tangency point with the parabola represents the optimal portfolio constructed with 100% risky assets. We will mark this optimal portfolio as a "Star" in the plot at the bottom of this file.  
 
 
 ## Dependent packages
