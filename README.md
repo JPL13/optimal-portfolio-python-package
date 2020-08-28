@@ -6,7 +6,7 @@ This package implements portfolio optimization methods based on Modern Portfolio
 
 The key insight of this paper is that by combining assets with different expected returns and volatilities, one can find a optimal weights which minimises the risk for a targeted return or maximizes the return for a targeted risk. The set of all such optimal portfolios is referred to as the efficient frontier in the absence of a risk-free asset. The shape of this efficient frontier is a parabola. 
 
-When a risk-free asset is present, the line passes vertical intercept at the risk-free rate and tangent to the efficient frontier is the new efficient frontier, which is called the capital allocation line (CAL). The tangency point with the parabola represents the optimal portfolio constructed with 100% risky assets. We will mark this optimal portfolio as a "Star" in the plot at the bottom of this file.  
+When a risk-free asset is present, the line passes vertical intercept at the risk-free rate and tangent to the efficient frontier is the new efficient frontier, which is called the capital allocation line (CAL). The tangency point with the parabola represents the optimal portfolio constructed with 100% risky assets. We will mark this portfolio as a "Star" in the plot at the bottom of this file.  
 
 
 ## Dependent packages
@@ -24,13 +24,13 @@ pip install ptf_optimize
 ## Functions:
 - constructor: construct a 'portfolio' object with a list of stock tickers. Users can specify the start date and the end date for the period of the stock price data. The defaut is is to use last five years of data on the stock price. 
 
-- equal_allocation: stocks in this portfolio has equal weights. This may be useful if you're trying to get a sense of how equal allocation portfolio performs compared to other portfolios.
+- equal_allocation: This results in a portfolio with equal weights. This may be useful if you're trying to get a sense of how equal allocation portfolio performs compared to other portfolios.
 
-- opt_portfolio: this results in a tangency portfolio because on a graph of expected returns vs volatility, this portfolio corresponds to the tangent of the efficient frontier that has a y-intercept equal to the risk-free rate. 
+- opt_portfolio: this results in a tangency point on the efficient frontier when risk free asset is present, this portfolio corresponds to the tangent of the efficient frontier that has a y-intercept equal to the risk-free rate. 
 
 - min_risk: This results in a portfolio that has minimum volitility. 
 
-- min_risk_given_return: This results in a portfolio that has minimum volatility for a specific return rate. 
+- min_risk_given_return: This results in a portfolio that has minimum volatility for a targeted return rate. 
 
 - get_portfolio_stats: This function prints out the allocation of the portfolio as well as the resulting expected return, volatility, variance, and sharpe ratio of the portfolio.
 
@@ -46,7 +46,7 @@ from ptf_optimize import portfolio
 
 tickers = ["AAPL", "CSCO", "MSFT", "SNE", "ADBE", "MU", "CWT", "SJW", "NRG", "KEP", "NEE", "SO", "BRK-B", "V", "JPM", "C", "MA", "LFC", "JNJ", "CVS", "ISRG", "NVO", "ABT", "CI", "AMZN", "TM", "HD", "NKE", "TSLA", "LOW"]
 
-obj= portfolio(tickers, '2012-1-1', '2017-1-1') ## initialize a portfolio object with the s
+obj= portfolio(tickers, '2012-1-1', '2017-1-1') ## initialize a portfolio object with the stock tickers
 ```
 
 First, we can get the minimum risk portfolio by using:
@@ -137,7 +137,7 @@ Annual variance : 3.21%
 Sharpe ratio : 2.35
 ```
 
-We can get optimal weights for targeted return by using:
+We can get optimal weights for a targeted return by using:
 
 ```
 weights =obj.min_risk_given_return(expected_return=0.3)
