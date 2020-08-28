@@ -6,15 +6,15 @@ This package implements portfolio optimisation methods using classical mean-vari
 
 ## Dependent packages
 
-pandas, numpy, matplotlib.pyplot, pandas_datareader, datetime
+The dependent packages are : `pandas`, `numpy`, `matplotlib`, `pandas_datareader`, and `datetime`
 
 ## Install this package
 
 This project is available on PyPI, meaning that you can just:
 
-'''
+```python
 pip install PyPortfolioOpt
-'''
+```
 
 ## Functions:
 - constructor: construct a 'portfolio' object with a list of stock tickers. 
@@ -34,9 +34,14 @@ pip install PyPortfolioOpt
 
 ## Example usage
 
+Here is an example on real life stock data, demonstrating how easy it is to find the optimal portfolio that maximizes sharpe ratio.
+
 ```python
+from ptf_optimize import portfolio
+
 tickers = ["AAPL", "CSCO", "MSFT", "SNE", "ADBE", "MU", "CWT", "SJW", "NRG", "KEP", "NEE", "SO", "BRK-B", "V", "JPM", "C", "MA", "LFC", "JNJ", "CVS", "ISRG", "NVO", "ABT", "CI", "AMZN", "TM", "HD", "NKE", "TSLA", "LOW"]
-obj= portfolio(tickers, '2012-1-1', '2017-1-1')
+
+obj= portfolio(tickers, '2012-1-1', '2017-1-1') ## initialize a portfolio object with the s
 ```
 
 ```python
@@ -44,7 +49,7 @@ weights=obj.min_risk()
 ```
 
 ```text
-AAPL  : 0.0488
+ AAPL  : 0.0488
  CSCO  : 0.0485
  MSFT  : -0.0098
  SNE   : -0.0317
@@ -84,5 +89,5 @@ Sharpe ratio : 1.32
 obj.plot_efficient_frontier()
 ```
 <center>
-<img src="https://github.com/robertmartin8/PyPortfolioOpt/blob/master/media/efficient_frontier_white.png" style="width:60%;"/>
+<img src="https://github.com/JPL13/optimal-portfolio-python-package/blob/master/Efficient%20Frontier.jpg" style="width:60%;"/>
 </center>
