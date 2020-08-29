@@ -1,8 +1,3 @@
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import pandas_datareader as web
-from datetime import date, timedelta
 
 import pandas as pd
 import numpy as np
@@ -112,7 +107,7 @@ class portfolio:
         
         return weights, A, B, C, D
     
-    ## plot efficient frontier using mutual fund theorem
+        ## plot efficient frontier using mutual fund theorem
     def plot_efficient_frontier(self): 
         # get two portfolios on the efficient frontier
         x1 = self.min_risk(show_stats=False) ## the weight of portfolio1
@@ -175,14 +170,26 @@ class portfolio:
         plt.plot(sdeff, y2, color='black')
         plt.plot(sd_ab, r_ab, color='blue', label='Efficient frontier plotted with Mutual Fund Theorem')
         
+        # plot capital allocation line
+        x_vals = np.array(ax.get_xlim())
+         
+        y_vals = risk_free_rate +  x_vals* np.sqrt(C* risk_free_rate ** 2 - 2*risk_free_rate *A+B) 
+        plt.plot(x_vals, y_vals, '--', label='Capital allocation line' )
+
+        
+        #plt.axline((v3**0.5, m3),(0, risk_free_rate), c='r', label='Capital allocation line')
+        
         plt.plot(v1**0.5, m1, "<", color='red', markersize=10, label='Minimum risk portfolio')
         plt.plot(v2**0.5, m2, "s", color='orange', markersize=10, label='Minimum risk portfolio with annual target return of 30%')
         plt.plot(v3**0.5, m3, "*", color='hotpink', markersize=18, label='Optimal portfolio, Risk free asset: '+ str(risk_free_rate))
-
+        
         plt.legend(frameon=False)
         
         for i, ticker in enumerate(self.tickers):
             ax.annotate(ticker, (risk[i], self.means[i] ))
+            
+        plt.savefig('EfficientFrontier.png')
 
         plt.show();
 
+        
