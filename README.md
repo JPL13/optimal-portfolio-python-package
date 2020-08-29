@@ -188,7 +188,7 @@ Finally, we can plot the Efficient Frontier by using:
 obj.plot_efficient_frontier()
 ```
 <center>
-<img src="https://github.com/JPL13/optimal-portfolio-python-package/blob/master/Efficient%20Frontier.jpg" style="width:60%;"/>
+<img src="https://github.com/JPL13/optimal-portfolio-python-package/blob/master/EfficientFrontier.png" style="width:60%;"/>
 </center>
 
 We can see from the plot that, the diversified portfolios on the efficient frontier do perform better than any of the individual stock: 
